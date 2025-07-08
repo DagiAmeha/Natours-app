@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Parcel/other build cache
+.cache/
+
+# Development data
+dev-data/
+
+# Build/output folders
+dist/
+build/
+coverage/
+tmp/
+temp/
+
+# Ignore specific HTML files in public
+public/overview.html
+public/tour.html
+
+# Environment files
+.env
+.env.local
+.env.development
+
+# Log files
+*.log
+logs/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Test snapshots
+__snapshots__/
+
+# Personal notes or scratch files
+*.swp
+*.swo
+*.bak
+*.tmp
+notes.txt
