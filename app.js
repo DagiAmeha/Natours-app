@@ -36,8 +36,16 @@ app.use(
           "'self'",
           'https://cdnjs.cloudflare.com',
           'https://unpkg.com',
+          'https://js.stripe.com',
         ],
-        connectSrc: ["'self'", 'http://127.0.0.1:3000', 'ws://localhost:49519'],
+        frameSrc: [
+          "'self'",
+          'https://js.stripe.com',
+          'https://hooks.stripe.com',
+        ],
+
+        connectSrc: ["'self'", 'http://127.0.0.1:3000', 'ws://localhost:*'],
+
         imgSrc: [
           "'self'",
           'https://a.tile.openstreetmap.org',
@@ -98,7 +106,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
-app.use('/api/v1/booking', bookingRouter);
+app.use('/api/v1/bookings', bookingRouter);
 
 app.all('*', (req, res, next) => {
   // const err = new Error(`Can't find ${req.originalUrl} on this server!`);
