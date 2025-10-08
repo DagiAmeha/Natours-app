@@ -11,6 +11,8 @@ const logoutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
+const hamburgerMenu = document.querySelector('.hamburger-icon');
+const overlay = document.querySelector('.blur-overlay');
 
 if (mapBox) {
   const locations = JSON.parse(
@@ -72,3 +74,28 @@ if (bookBtn) {
     bookTour(tourId);
   });
 }
+
+if (hamburgerMenu) {
+  hamburgerMenu.addEventListener('click', (e) => {
+    console.log('Hamburger menu clicked');
+    const nav = document.querySelector('.user-view__menu');
+    nav?.classList.toggle('user-view__menu--active');
+    overlay.classList.toggle('blur-overlay--active');
+  });
+}
+
+if (overlay) {
+  overlay.addEventListener('click', (e) => {
+    console.log('Overlay clicked');
+    nav.classList.remove('user-view__menu--active');
+    overlay.classList.remove('blur-overlay--active');
+  });
+}
+
+window.addEventListener('pageshow', () => {
+  const nav = document.querySelector('.user-view__menu');
+  const overlay = document.querySelector('.blur-overlay');
+
+  if (nav) nav.classList.remove('user-view__menu--active');
+  if (overlay) overlay.classList.remove('blur-overlay--active');
+});

@@ -1,14 +1,20 @@
 header.header 
-    nav.nav.nav--tours
-        a.nav__el(href='#') All tours
-    .header__log 
-        img(src='/img/logo-white.png' width='80' height='42' alt='Natours log')
-    nav.nav.nav--user
-        if user
-          a.nav__el.nav__el--logout Log out
-          a.nav__el(href='/me') 
-            img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
-            span= user.name.split(' ')[0]
-        else
-          a.nav__el(href='/login') Log in
-          a.nav__el.nav__el--cta(href='#') Sing Up
+  nav.nav.nav--tours
+      a.nav__el(href='/') All tours
+  .header__logo
+      img(src='/img/logo-white.png' width='80' height='42' alt='Natours log')
+  nav.nav.nav--user
+      if user
+        - console.log('current url ' , currentUrl)
+        a.nav__el(href='/logout') Log out
+        a.nav__el.nav__el--hide(href='/me') 
+          img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+          span.nav__el--hide= user.name.split(' ')[0] 
+        svg.hamburger-icon(class=(currentUrl !== '/me' ? 'hamburger-icon--hide' : ''))
+          use(xlink:href='img/icons.svg#icon-menu')
+
+
+      else
+        a.nav__el.nav__el--hide(href='/login') Log in
+        a.nav__el.nav__el--cta.nav__el--hide(href='#') Sign Up
+      

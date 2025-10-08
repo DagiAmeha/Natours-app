@@ -7,11 +7,12 @@ html
       link(rel='stylesheet' href='/css/style.css')
       link(rel='shrtcut icon' type='image/png' href='/img/favicon.png')
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
-      script(src="https://js.stripe.com/v3/")
 
       title Natours | #{title}
 
   body
+  
+    .blur-overlay
     // HEADER
     include _header
 
@@ -25,4 +26,5 @@ html
     //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.9.0/axios.min.js')
     //- script(src='/js/mapbox.js')
     //- script(src='/js/login.js')
+    script(src="https://js.stripe.com/v3/")
     script(src='/js/bundle.js')
