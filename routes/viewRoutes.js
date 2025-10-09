@@ -12,6 +12,7 @@ router.get(
   viewsController.getOverview,
 );
 router.get('/tours/:slug', authController.isLoggedIn, viewsController.getTour);
+router.get('/signup', viewsController.getSignUpForm);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/logout', authController.logout, viewsController.getOverview);
 router.get('/me', authController.protect, viewsController.getAccount);

@@ -1629,4 +1629,7 @@ body {
   .form__input {
     padding: 0.6rem 1.5rem;
   }
+  .login-form {
+    padding: 3rem 4rem;
+  }
 }
