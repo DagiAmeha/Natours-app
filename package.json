@@ -4,14 +4,15 @@
   "description": "learning node, express and mongoDb",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js",
     "start:prod": "cross-env NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
     "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">=20.0.0"
   },
   "author": "Dagim Ameha",
   "license": "ISC",
