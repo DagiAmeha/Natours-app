@@ -46,7 +46,7 @@ app.use(
         connectSrc:
           process.env.NODE_ENV === 'development'
             ? ["'self'", 'http://127.0.0.1:3000', 'ws://localhost:*']
-            : ["'self'", 'wss://natours-dag.onrender.com'],
+            : ["'self'", 'wss://natours-dag.onrender.com:49969'],
 
         imgSrc: [
           "'self'",
