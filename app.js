@@ -43,8 +43,10 @@ app.use(
           'https://js.stripe.com',
           'https://hooks.stripe.com',
         ],
-
-        connectSrc: ["'self'", 'http://127.0.0.1:3000', 'ws://localhost:*'],
+        connectSrc:
+          process.env.NODE_ENV === 'development'
+            ? ["'self'", 'http://127.0.0.1:3000', 'ws://localhost:*']
+            : ["'self'", 'wss://natours-dag.onrender.com'],
 
         imgSrc: [
           "'self'",
