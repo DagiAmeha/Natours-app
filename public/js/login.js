@@ -8,7 +8,6 @@ export const signup = async (name, email, password, passwordConfirm) => {
     const res = await axios({
       method: 'POST',
       url: 'https://natours-dag.onrender.com/api/v1/users/signup',
-
       data: {
         name,
         email,
