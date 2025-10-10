@@ -12584,7 +12584,7 @@ var signup = exports.signup = /*#__PURE__*/function () {
           _context.next = 3;
           return (0, _axios.default)({
             method: 'POST',
-            url: 'http://localhost:3000/api/v1/users/signup',
+            url: 'https://natours-dag.onrender.com/api/v1/users/signup',
             data: {
               name: name,
               email: email,
@@ -12628,7 +12628,7 @@ var login = exports.login = /*#__PURE__*/function () {
           _context2.next = 3;
           return (0, _axios.default)({
             method: 'POST',
-            url: 'http://localhost:3000/api/v1/users/login',
+            url: 'https://natours-dag.onrender.com/api/v1/users/login',
             data: {
               email: email,
               password: password
@@ -12670,7 +12670,7 @@ var logout = exports.logout = /*#__PURE__*/function () {
           _context3.next = 3;
           return (0, _axios.default)({
             method: 'GET',
-            url: 'http://localhost:3000/api/v1/users/logout'
+            url: 'https://natours-dag.onrender.com/api/v1/users/logout'
           });
         case 3:
           res = _context3.sent;
@@ -12729,7 +12729,7 @@ var updateSettings = exports.updateSettings = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
-          url = type === 'password' ? 'http://localhost:3000/api/v1/users/updateMyPassword' : 'http://localhost:3000/api/v1/users/updateMe';
+          url = type === 'password' ? 'https://natours-dag.onrender.com/api/v1/users/updateMyPassword' : 'https://natours-dag.onrender.com/api/v1/users/updateMe';
           _context.next = 4;
           return (0, _axios.default)({
             method: 'PATCH',
@@ -12784,7 +12784,7 @@ var bookTour = exports.bookTour = /*#__PURE__*/function () {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return (0, _axios.default)("http://localhost:3000/api/v1/bookings/checkout-session/".concat(tourId));
+          return (0, _axios.default)("https://natours-dag.onrender.com/api/v1/bookings/checkout-session/".concat(tourId));
         case 3:
           session = _context.sent;
           console.log(session.data.session.id);
@@ -13088,7 +13088,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49969" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52634" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
