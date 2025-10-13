@@ -49,7 +49,6 @@ app.use(
             : [
                 "'self'",
                 'https://natours-dag.onrender.com',
-                'wss://natours-dag.onrender.com:49969',
               ],
         imgSrc: [
           "'self'",
