@@ -48,7 +48,8 @@ app.use(
             ? ["'self'", 'http://127.0.0.1:3000', 'ws://localhost:*']
             : [
                 "'self'",
-                'https://natours-dag.onrender.com',
+                "https://natours-dag.onrender.com",
+        "wss://natours-dag.onrender.com",
               ],
         imgSrc: [
           "'self'",
