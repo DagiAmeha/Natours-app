@@ -3,11 +3,15 @@ import { showAlert } from './alerts';
 
 // type is either 'password' or 'data'
 export const updateSettings = async (data, type) => {
+  const hostName =
+    process.env.NODE_ENV == 'development'
+      ? 'http://localhost:3000'
+      : 'https://natours-dag.onrender.com';
   try {
     const url =
       type === 'password'
-        ? 'https://natours-dag.onrender.com/api/v1/users/updateMyPassword'
-        : 'https://natours-dag.onrender.com/api/v1/users/updateMe';
+        ? `${hostName}/api/v1/users/updateMyPassword`
+        : `${hostName}/api/v1/users/updateMe`;
 
     const res = await axios({
       method: 'PATCH',
@@ -23,5 +27,6 @@ export const updateSettings = async (data, type) => {
     }
   } catch (err) {
     showAlert('error', err.response.data.message);
+    console.log(err);
   }
 };

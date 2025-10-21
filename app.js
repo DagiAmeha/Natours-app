@@ -45,11 +45,8 @@ app.use(
         ],
         connectSrc:
           process.env.NODE_ENV === 'development'
-            ? ["'self'", 'http://127.0.0.1:3000', 'ws://localhost:*']
-            : [
-                "'self'",
-                'https://natours-dag.onrender.com',
-              ],
+            ? ["'self'", 'http://localhost:3000', 'ws://localhost:*']
+            : ["'self'", 'https://natours-dag.onrender.com'],
         imgSrc: [
           "'self'",
           'https://a.tile.openstreetmap.org',
@@ -62,6 +59,7 @@ app.use(
   }),
 );
 
+console.log(process.env.NODE_ENV);
 // Development logging
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 

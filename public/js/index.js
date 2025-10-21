@@ -64,7 +64,7 @@ if (userDataForm) {
 if (userPasswordForm) {
   userPasswordForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    document.querySelector('btn--save-password').textContent = 'Updating...';
+    document.querySelector('.btn--save-password').textContent = 'Updating...';
     const passwordCurrent = document.getElementById('password-current').value;
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('password-confirm').value;
@@ -72,7 +72,7 @@ if (userPasswordForm) {
       { passwordCurrent, password, passwordConfirm },
       'password',
     );
-    document.querySelector('btn--save-password').textContent = 'Save password';
+    document.querySelector('.btn--save-password').textContent = 'Save password';
     document.getElementById('password-current').value = '';
     document.getElementById('password').value = '';
     document.getElementById('password-confirm').value = '';
