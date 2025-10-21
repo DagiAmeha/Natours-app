@@ -59,7 +59,6 @@ app.use(
   }),
 );
 
-console.log(process.env.NODE_ENV);
 // Development logging
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 

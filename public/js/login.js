@@ -31,7 +31,6 @@ export const signup = async (name, email, password, passwordConfirm) => {
     }
   } catch (err) {
     showAlert('error', err.response.data.message);
-    console.error(err.response);
   }
 };
 export const login = async (email, password) => {
@@ -53,7 +52,6 @@ export const login = async (email, password) => {
     }
   } catch (err) {
     showAlert('error', err.response.data.message);
-    console.error(err);
   }
 };
 
