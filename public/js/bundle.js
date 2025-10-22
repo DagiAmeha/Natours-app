@@ -12956,7 +12956,7 @@ function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { 
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; } /* eslint-disable */
 var stripe = Stripe('pk_test_51Rkp6fBCL9KvqzD7n6nKP4qnYWyb7oaWHnqIFo8MMItwXaNv77AREfrzZOo2dw1rW5I5cKY7jnTb7gAtrQm7Lt2300v6wFTiIw');
-var hostName = "development" == 'development' ? 'http://localhost:3000' : 'https://natours-dag.onrender.com';
+var hostName = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://natours-dag.onrender.com';
 var bookTour = exports.bookTour = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(tourId) {
     var session, _t;
@@ -13268,7 +13268,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64201" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56964" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
