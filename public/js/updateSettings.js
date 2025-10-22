@@ -3,6 +3,7 @@ import { showAlert } from './alerts';
 
 // type is either 'password' or 'data'
 export const updateSettings = async (data, type) => {
+  console.log(process.env.NODE_ENV);
   const hostName =
     process.env.NODE_ENV == 'development'
       ? 'http://localhost:3000'

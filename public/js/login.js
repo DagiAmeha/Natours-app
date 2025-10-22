@@ -34,6 +34,8 @@ export const signup = async (name, email, password, passwordConfirm) => {
   }
 };
 export const login = async (email, password) => {
+  console.log(process.env.NODE_ENV);
+
   try {
     const res = await axios({
       method: 'POST',
