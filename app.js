@@ -46,7 +46,7 @@ app.use(
         connectSrc:
           process.env.NODE_ENV === 'development'
             ? ["'self'", 'http://localhost:3000', 'ws://localhost:*']
-            : ["'self'", 'https://natours-dag.onrender.com'],
+            : ["'self'", 'https://natours-dag.onrender.com:*'],
         imgSrc: [
           "'self'",
           'https://a.tile.openstreetmap.org',
