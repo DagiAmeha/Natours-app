@@ -4,7 +4,7 @@ import axios from 'axios';
 import { showAlert } from './alerts';
 
 const hostName =
-  process.env.NODE_ENV == 'development'
+  window.location.hostname === 'localhost'
     ? 'http://localhost:3000'
     : 'https://natours-dag.onrender.com';
 

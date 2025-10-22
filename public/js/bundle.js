@@ -12754,7 +12754,7 @@ function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present,
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; } /* eslint-disable */
-var hostName = "development" == 'development' ? 'http://localhost:3000' : 'https://natours-dag.onrender.com';
+var hostName = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://natours-dag.onrender.com';
 var signup = exports.signup = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(name, email, password, passwordConfirm) {
     var res, _t;
@@ -12907,7 +12907,7 @@ var updateSettings = exports.updateSettings = /*#__PURE__*/function () {
       while (1) switch (_context.p = _context.n) {
         case 0:
           console.log("development");
-          hostName = "development" == 'development' ? 'http://localhost:3000' : 'https://natours-dag.onrender.com';
+          hostName = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://natours-dag.onrender.com';
           _context.p = 1;
           url = type === 'password' ? "".concat(hostName, "/api/v1/users/updateMyPassword") : "".concat(hostName, "/api/v1/users/updateMe");
           _context.n = 2;
@@ -13268,7 +13268,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53150" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64201" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
