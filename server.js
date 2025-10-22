@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTIOIN! Shitting down...');
+  console.log(process.env.DATABASE);
+
   console.log(err.name, err.message);
   process.exit(1);
 });
