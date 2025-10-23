@@ -1,3 +1,4 @@
+const axios = require('axios');
 const crypto = require('crypto');
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
@@ -36,6 +37,22 @@ const createSendToken = (user, statusCode, res) => {
   });
 };
 exports.signup = catchAsync(async (req, res, next) => {
+  const response = await axios.get('https://apilayer.net/api/check', {
+    params: {
+      access_key: process.env.MAILBOXLAYER_KEY,
+      email: req.body.email,
+      smtp: 1, // optional, verifies via SMTP
+      format: 1,
+    },
+  });
+
+  const { data } = response;
+
+  if (!data.format_valid || !data.smtp_check) {
+    return next(
+      new AppError('Invalid email address. Please enter a real email.', 400),
+    );
+  }
   const newUser = await User.create({
     name: req.body.name,
     email: req.body.email,
