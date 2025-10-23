@@ -12761,7 +12761,7 @@ var signup = exports.signup = /*#__PURE__*/function () {
     return _regenerator().w(function (_context) {
       while (1) switch (_context.p = _context.n) {
         case 0:
-          console.log("development");
+          console.log(hostname);
           _context.p = 1;
           _context.n = 2;
           return (0, _axios.default)({
