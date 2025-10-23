@@ -4,10 +4,13 @@ import { signup, login, logout } from './login';
 import { displayMap } from './mapbox';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
+import { forgotPassword, passwordReset } from './forgotPassword';
 
 const mapBox = document.getElementById('map');
 const signUpForm = document.querySelector('.form--signup');
 const loginForm = document.querySelector('.form--login');
+const forgotPasswordForm = document.querySelector('.form--forgot-password');
+const passwordResetForm = document.querySelector('.form--password-reset');
 const logoutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
@@ -25,7 +28,6 @@ if (mapBox) {
 if (signUpForm) {
   signUpForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('form submitted');
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -42,7 +44,24 @@ if (loginForm) {
     login(email, password);
   });
 }
+if (forgotPasswordForm) {
+  forgotPasswordForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
 
+    forgotPassword(email);
+    document.getElementById('email').value = '';
+  });
+}
+
+if (passwordResetForm) {
+  passwordResetForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+    passwordReset(password, passwordConfirm);
+  });
+}
 if (logoutBtn) {
   logoutBtn.addEventListener('click', (e) => {
     logout();
@@ -57,7 +76,6 @@ if (userDataForm) {
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.querySelector('.form__upload').files[0]);
 
-    console.log(form);
     updateSettings(form, 'data');
   });
 }

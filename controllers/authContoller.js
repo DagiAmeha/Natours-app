@@ -43,8 +43,8 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
   });
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
   await new Email(newUser, url).sendWelcome();
+
   createSendToken(newUser, 201, res);
 });
 
@@ -159,6 +159,7 @@ exports.restrictTo = (...roles) => {
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
   // 1) Get user based on Posted email
+  console.log('user email: ', req.body.email);
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
     return next(new AppError('There is no user with this email address.', 404));
@@ -172,7 +173,8 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   // const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
 
   try {
-    const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
+    const resetURL = `${req.protocol}://${req.get('host')}/resetPassword/${resetToken}`;
+
     await new Email(user, resetURL).sendPasswordReset();
     res.status(200).json({
       status: 'success',
@@ -218,7 +220,6 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 });
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
-  console.log('Update password is achied');
   // 1) Get user from collection
   const user = await User.findOne({ email: req.user.email });
   // 2) Check if Posted current password is correct

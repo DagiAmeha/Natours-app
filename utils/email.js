@@ -11,36 +11,23 @@ module.exports = class Email {
   }
 
   newTransport() {
-    if (process.env.NODE_ENV === 'production') {
-      return nodemailer.createTransport({
-        service: 'SendGrid',
-        auth: {
-          user: process.env.SENDGRID_USERNAME,
-          pass: process.env.SENDGRID_PASSWORD,
-        },
-      });
-    }
-
+    // ✅ Gmail SMTP for all environments
     return nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
+      service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.EMAIL_USERNAME, // your Gmail address
+        pass: process.env.EMAIL_PASSWORD, // your 16-char App Password
       },
     });
   }
 
   async send(template, subject) {
-    // send the actual email
-    // 1) Render HTML based on a pug template
     const html = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
       firstName: this.firstName,
       url: this.url,
       subject,
     });
 
-    // 2) Define email option
     const mailOptions = {
       from: this.from,
       to: this.to,
@@ -49,12 +36,11 @@ module.exports = class Email {
       text: htmlToText(html),
     };
 
-    // 3) create a transport and send email
     await this.newTransport().sendMail(mailOptions);
   }
 
   async sendWelcome() {
-    await this.send('welcome', 'Welocme to the Natours Family!');
+    await this.send('welcome', 'Welcome to the Natours Family!');
   }
 
   async sendPasswordReset() {

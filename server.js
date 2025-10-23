@@ -3,8 +3,6 @@ const dotenv = require('dotenv');
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTIOIN! Shitting down...');
-  console.log(process.env.DATABASE);
-
   console.log(err.name, err.message);
   process.exit(1);
 });
@@ -12,8 +10,6 @@ process.on('uncaughtException', (err) => {
 dotenv.config({ path: './config.env' });
 const app = require('./app');
 
-
-console.log(process.env.DATABASE);
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD,

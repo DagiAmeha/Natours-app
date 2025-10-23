@@ -80,6 +80,9 @@ body {
   margin: 0 auto;
 }
 
+.ma-bt-sm {
+  margin-bottom: 2rem !important;
+}
 .ma-bt-md {
   margin-bottom: 3rem !important;
 }
@@ -194,6 +197,10 @@ body {
   right: 2rem;
   width: 70%;
   z-index: 10;
+}
+.heading-medium {
+  font-size: 1.6rem;
+  font-weight: normal;
 }
 @media only screen and (max-width: 62.5em) {
   .heading-primary {
@@ -1556,7 +1563,14 @@ body {
 .form__group:not(:last-child) {
   margin-bottom: 2.5rem;
 }
-
+.form__group:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form__group:last-child a {
+  font-size: 1.6rem;
+}
 .form__label {
   display: block;
   font-size: 1.6rem;
