@@ -12761,9 +12761,8 @@ var signup = exports.signup = /*#__PURE__*/function () {
     return _regenerator().w(function (_context) {
       while (1) switch (_context.p = _context.n) {
         case 0:
-          console.log(hostname);
-          _context.p = 1;
-          _context.n = 2;
+          _context.p = 0;
+          _context.n = 1;
           return (0, _axios.default)({
             method: 'POST',
             url: "".concat(hostName, "/api/v1/users/signup"),
@@ -12774,7 +12773,7 @@ var signup = exports.signup = /*#__PURE__*/function () {
               passwordConfirm: passwordConfirm
             }
           });
-        case 2:
+        case 1:
           res = _context.v;
           console.log(res);
           if (res.data.status === 'success') {
@@ -12783,16 +12782,16 @@ var signup = exports.signup = /*#__PURE__*/function () {
               location.assign('/');
             }, 1500);
           }
-          _context.n = 4;
+          _context.n = 3;
           break;
-        case 3:
-          _context.p = 3;
+        case 2:
+          _context.p = 2;
           _t = _context.v;
           (0, _alerts.showAlert)('error', _t.response.data.message);
-        case 4:
+        case 3:
           return _context.a(2);
       }
-    }, _callee, null, [[1, 3]]);
+    }, _callee, null, [[0, 2]]);
   }));
   return function signup(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -13387,7 +13386,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53006" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60826" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
