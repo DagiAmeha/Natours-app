@@ -9,8 +9,6 @@ const hostName =
     : 'https://natours-dag.onrender.com';
 
 export const signup = async (name, email, password, passwordConfirm) => {
-  console.log(hostname);
-
   try {
     const res = await axios({
       method: 'POST',
