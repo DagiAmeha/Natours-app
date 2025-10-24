@@ -48,6 +48,7 @@ if (forgotPasswordForm) {
   forgotPasswordForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('email').value;
+    console.log(email);
 
     forgotPassword(email);
     document.getElementById('email').value = '';

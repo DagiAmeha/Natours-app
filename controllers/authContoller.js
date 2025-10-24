@@ -44,7 +44,9 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
   });
   const url = `${req.protocol}://${req.get('host')}/me`;
+  console.log(url);
   await new Email(newUser, url).sendWelcome();
+  console.log('sent');
 
   createSendToken(newUser, 201, res);
 });
