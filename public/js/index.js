@@ -49,9 +49,9 @@ if (forgotPasswordForm) {
     e.preventDefault();
     const email = document.getElementById('email').value;
     console.log(email);
+    document.getElementById('email').value = '';
 
     forgotPassword(email);
-    document.getElementById('email').value = '';
   });
 }
 
