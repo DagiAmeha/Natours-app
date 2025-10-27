@@ -51,7 +51,7 @@ if (forgotPasswordForm) {
     console.log(email);
 
     forgotPassword(email);
-    document.getElementById('email').value = '';
+    email.value = '';
   });
 }
 
