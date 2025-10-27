@@ -13273,7 +13273,8 @@ if (forgotPasswordForm) {
     e.preventDefault();
     var email = document.getElementById('email').value;
     console.log(email);
-    document.getElementById('email').value = '';
+    // document.getElementById('email').value = '';
+
     (0, _forgotPassword.forgotPassword)(email);
   });
 }
