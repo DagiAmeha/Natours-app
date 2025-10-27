@@ -13260,6 +13260,7 @@ if (signUpForm) {
     (0, _login.signup)(name, email, password, passwordConfirm);
   });
 }
+console.log('Forgot password JS reloaded ✅');
 if (loginForm) {
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -13388,7 +13389,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58447" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53466" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

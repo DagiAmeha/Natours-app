@@ -35,6 +35,7 @@ if (signUpForm) {
     signup(name, email, password, passwordConfirm);
   });
 }
+console.log('Forgot password JS reloaded ✅');
 
 if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
